@@ -11,7 +11,7 @@ from ultralytics.nn.yolo_rdd_modules import (
 )
 ```
 
-3. In `parse_model`, treat `RepNCSPELAN4_low`, `VoVGSCSPC`, and `GSConv` as channel-changing modules. Treat `VoVGSCSPC` as a repeat-aware module, so its YAML repeat count is passed into its constructor.
+3. In `parse_model`, treat `RepNCSPELAN4_low`, `VoVGSCSPC`, and `GSConv` as channel-changing modules. Each `VoVGSCSPC` entry in the released model YAML represents one aggregation stage.
 4. In `parse_model`, add a `Dy_Sample` branch that prepends the input channel count to its YAML arguments:
 
 ```python

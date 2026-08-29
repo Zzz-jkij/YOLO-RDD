@@ -1,2 +1,13 @@
+# Training settings reported in Section 3.1 of the manuscript.
 # Random seeds used for repeated runs: 0, 42, and 2025.
-batch_size: 16
+optimizer: SGD
+epochs: 300
+patience: 100
+batch: 16
+imgsz: 640
+lr0: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+
+# The best checkpoint is selected by maximum validation fitness:
+# 0.1 * mAP@50 + 0.9 * mAP@50:95.

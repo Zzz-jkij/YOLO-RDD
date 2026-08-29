@@ -8,7 +8,7 @@ The nano scale is selected with depth multiplier `0.50`, width multiplier `0.25`
 
 ## Neck
 
-The top-down route uses two `Dy_Sample` layers with `scale=2` and `style="lp"`. The module defaults retained by the configuration are `groups=4` and `dyscope=False`. Three `VoVGSCSPC` nodes are each configured with three repeats and nominal output channels of 256. Two `GSConv` layers use nominal output channels 256 and 512, respectively, with a 3 x 3 kernel and stride 2. Their implementations are in `yolo_rdd_modules/Dysample_nsl.py` and `yolo_rdd_modules/SlimNeck.py`.
+The top-down route uses two `Dy_Sample` layers with `scale=2` and `style="lp"`. The module defaults retained by the configuration are `groups=4` and `dyscope=False`. The P3, P4, and P5 levels each use one `VoVGSCSPC` aggregation stage with nominal output channels of 256. Two `GSConv` layers use nominal output channels 256 and 512, respectively, with a 3 x 3 kernel and stride 2. Their implementations are in `yolo_rdd_modules/Dysample_nsl.py` and `yolo_rdd_modules/SlimNeck.py`.
 
 ## Detection head
 
